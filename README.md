@@ -81,5 +81,5 @@ Try these in the UI:
 ## ⚠️ Limitations & Tradeoffs
 
 - **Sequential Execution**: The Executor runs steps one by one. Parallel execution could speed this up.
-- **Context Limit**: Very long plans might hit LLM token limits (though GPT-4o handles most well).
+- **Context Limit**: Very long plans might hit LLM token limits.
 - **Error Handling**: Basic retry logic is implemented, but severe API outages might fail the specific step.
