@@ -14,6 +14,7 @@ class VerifierAgent(BaseAgent):
         Synthesize the information into a cohesive guide/response.
         """
         
+        
         # Convert results to string for prompt
         results_str = ""
         for res in execution_results:

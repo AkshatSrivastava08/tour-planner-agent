@@ -15,6 +15,10 @@ class PlannerAgent(BaseAgent):
         1. WeatherTool: Fetch weather for a specific city. Args: {"city": "City Name"}
         2. SerperTool: Search the web for information (events, places, etc.). Args: {"query": "Search query"}
         
+        Instructions:
+        - If the user request requires data from the internet or current weather, create a plan with the necessary tools.
+        - If the user input is a general greeting (e.g., "hi", "hello"), a question about your identity, or simple chitchat that does NOT require tools, return an empty list of steps.
+        
         Output format:
         You must output ONLY valid JSON.
         Structure:
@@ -27,6 +31,12 @@ class PlannerAgent(BaseAgent):
                     "args": {"arg_name": "arg_value"}
                 }
             ]
+        }
+        
+        
+        Example for chitchat:
+        {
+            "steps": []
         }
         """
         

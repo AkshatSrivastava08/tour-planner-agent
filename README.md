@@ -4,13 +4,13 @@ A local, multi-agent AI system that plans travel itineraries using real-time dat
 
 ## 🚀 Features
 
-*   **Multi-Agent Architecture**:
-    *   **Planner**: Breaks down natural language queries into executable steps.
-    *   **Executor**: dynamically calls tools (Weather, Search) to gather info.
-    *   **Verifier**: Synthesizes results into a final, verified response.
-*   **Real Tools**: Integrates OpenWeatherMap and Serper.dev.
-*   **Structured Output**: Uses JSON-based planning for reliability.
-*   **Streamlit UI**: Clean, interactive interface to visualize the agent workflow.
+- **Multi-Agent Architecture**:
+  - **Planner**: Breaks down natural language queries into executable steps.
+  - **Executor**: dynamically calls tools (Weather, Search) to gather info.
+  - **Verifier**: Synthesizes results into a final, verified response.
+- **Real Tools**: Integrates OpenWeatherMap and Serper.dev.
+- **Structured Output**: Uses JSON-based planning for reliability.
+- **Streamlit UI**: Clean, interactive interface to visualize the agent workflow.
 
 ## 🛠️ Architecture
 
@@ -27,12 +27,14 @@ The system uses a sequential multi-agent flow:
 ## 📦 Setup Instructions
 
 1.  **Clone the Repository**
+
     ```bash
     git clone <your-repo-link>
     cd ai_ops_assistant
     ```
 
 2.  **Install Dependencies**
+
     ```bash
     pip install -r requirements.txt
     ```
@@ -40,9 +42,9 @@ The system uses a sequential multi-agent flow:
 3.  **Configure Environment Variables**
     Create a `.env` file in the root directory:
     ```ini
-    OPENWEATHER_API_KEY=your_key_here
-    SERPER_API_KEY=your_key_here
-    LLM_API_KEY=your_key_here
+    OPENWEATHER_API_KEY=your_key_here # generated from (https://home.openweathermap.org/api_keys)
+    SERPER_API_KEY=your_key_here # serper-api key generated from (https://serper.dev/)
+    LLM_API_KEY=your_key_here # llm-api key generated from groqcloud(https://console.groq.com/home)
     LLM_BASE_URL=https://api.groq.com/openai/v1  # For Groq
     LLM_MODEL=llama-3.3-70b-versatile          # For Groq
     ```
@@ -50,11 +52,13 @@ The system uses a sequential multi-agent flow:
 ## 🏃 Running the Project
 
 **Recommended (UI):**
+
 ```bash
 streamlit run app.py
 ```
 
 **Alternative (CLI):**
+
 ```bash
 python ai_ops_assistant/main.py --query "Plan a 2-day trip to London"
 ```
@@ -68,14 +72,14 @@ python ai_ops_assistant/main.py --query "Plan a 2-day trip to London"
 
 Try these in the UI:
 
-1.  *Plan a 3-day trip to Tokyo involving culture and food.*
-2.  *Find me the best hiking spots near San Francisco and check the weather there.*
-3.  *What are the top 3 museums in Paris and is it raining there right now?*
-4.  *Plan a weekend getaway to New York City with a focus on jazz clubs.*
-5.  *Compare the weather in London and Dubai and suggest activities for the warmer one.*
+1.  _Plan a 3-day trip to Tokyo involving culture and food._
+2.  _Find me the best hiking spots near San Francisco and check the weather there._
+3.  _What are the top 3 museums in Paris and is it raining there right now?_
+4.  _Plan a weekend getaway to New York City with a focus on jazz clubs._
+5.  _Compare the weather in London and Dubai and suggest activities for the warmer one._
 
 ## ⚠️ Limitations & Tradeoffs
 
-*   **Sequential Execution**: The Executor runs steps one by one. Parallel execution could speed this up.
-*   **Context Limit**: Very long plans might hit LLM token limits (though GPT-4o handles most well).
-*   **Error Handling**: Basic retry logic is implemented, but severe API outages might fail the specific step.
+- **Sequential Execution**: The Executor runs steps one by one. Parallel execution could speed this up.
+- **Context Limit**: Very long plans might hit LLM token limits (though GPT-4o handles most well).
+- **Error Handling**: Basic retry logic is implemented, but severe API outages might fail the specific step.
